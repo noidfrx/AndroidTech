@@ -1,11 +1,11 @@
-package com.example.androidtech.view
+package com.example.androidtech.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.androidtech.databinding.ActivityMainBinding
-import com.example.androidtech.viewModel.QuoteViewModel
+import com.example.androidtech.ui.viewModel.QuoteViewModel
 
 class MainActivity : AppCompatActivity() {
 

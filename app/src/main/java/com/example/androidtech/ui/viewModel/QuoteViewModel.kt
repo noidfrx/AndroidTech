@@ -1,9 +1,9 @@
-package com.example.androidtech.viewModel
+package com.example.androidtech.ui.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.androidtech.model.QuoteModel
-import com.example.androidtech.model.QuoteProvider
+import com.example.androidtech.data.model.QuoteModel
+import com.example.androidtech.data.model.QuoteProvider
 
 //Extiende de ViewModel para comportarse como tal
 class QuoteViewModel : ViewModel() {

@@ -1,4 +1,4 @@
-package com.example.androidtech.model
+package com.example.androidtech.data.model
 
 class QuoteProvider {
     companion object{
