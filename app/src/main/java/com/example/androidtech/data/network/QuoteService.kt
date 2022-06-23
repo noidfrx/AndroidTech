@@ -13,7 +13,7 @@ class QuoteService {
     //Suspend porque usamos una corrutina
     suspend fun getQuotes():List<QuoteModel>{
 
-        //Como queremos quitarle responsabilidad al hilo principal de la app, la que carga la vista, lo hacemos en una secundaria
+        //CORRUTINA: Como queremos quitarle responsabilidad al hilo principal de la app, la que carga la vista, lo hacemos en una secundaria
         return withContext(Dispatchers.IO){
 
             val response = retrofit.create(QuoteApiClient::class.java).getAllQuotes()

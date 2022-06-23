@@ -23,6 +23,11 @@ class MainActivity : AppCompatActivity() {
         //Cambio solo de la vista
         setContentView(binding.root)
 
+        //Llamamos a viewModel y creamos funcion onCreate
+        quoteViewModel.onCreate()
+
+
+
         //Accedemos a model del viewmodel .observe(owner, fun)
         quoteViewModel.quoteModel.observe(this, Observer { currentQuote ->
 
