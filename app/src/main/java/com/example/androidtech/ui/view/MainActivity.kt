@@ -3,6 +3,7 @@ package com.example.androidtech.ui.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.example.androidtech.databinding.ActivityMainBinding
 import com.example.androidtech.ui.viewModel.QuoteViewModel
@@ -30,11 +31,15 @@ class MainActivity : AppCompatActivity() {
 
         //Accedemos a model del viewmodel .observe(owner, fun)
         quoteViewModel.quoteModel.observe(this, Observer { currentQuote ->
-
             //Lo de aquí adentro está conectado al livedata y cuando cambie algo(nueva cita) se ejecuta lo que está aquí
             binding.tvQuote.text = currentQuote.quote
             binding.tvAuthor.text = currentQuote.author
         })
+
+        quoteViewModel.isLoading.observe(this) {
+            //La visibilidad va a estar dada según el boolean encontrado dentro del livedata
+            binding.progress.isVisible = it
+        }
 
         //Cuando tocamos algo en la pantalla, se obtiene cita random y se la pone al viewModel
         binding.viewContainer.setOnClickListener {
